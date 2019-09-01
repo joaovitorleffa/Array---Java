@@ -1,0 +1,27 @@
+import javax.swing.*;
+
+public class Exercicio01 {
+    public static void main(String[] args) {
+        int[] data = new int[5];
+        String leitura ;
+        String[] resultado = new String[data.length + 1];
+
+        for (int i = 0; i < data.length; i++) {
+            leitura = JOptionPane.showInputDialog("Posição " + i + ": ");
+            data[i] = Integer.parseInt(leitura);
+        }
+
+        for (int i = 0; i < (data.length + 1); i++) {
+            if (i == 0) {
+                resultado[i] = "{";
+            } else  if (i == (data.length + 1)) {
+                resultado[i] = "}";
+            } else {
+                resultado[i] = Integer.toString(data[i - 1]);
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, resultado);
+    }
+
+}
